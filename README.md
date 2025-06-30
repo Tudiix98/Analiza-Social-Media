@@ -1,4 +1,5 @@
 Descriere
+
 Aţi fost aleşi de către o platformă de social-media pentru a efectua un studiu asupra scorurilor videoclipurilor postate.
 
 Pentru fiecare videoclip se cunosc următoarele informaţii:
