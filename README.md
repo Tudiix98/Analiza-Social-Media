@@ -1,4 +1,5 @@
 Descriere
+
 Aţi fost aleşi de către o platformă de social-media pentru a efectua un studiu asupra scorurilor videoclipurilor postate.
 
 Pentru fiecare videoclip se cunosc următoarele informaţii:
@@ -15,9 +16,14 @@ Scorul avansat (SA) se calculează în funcție de scorul simplu (SS) și catego
 Categoria ”Studiu” -  SA = SS x 2
 Categoria ”Animale” - SA = SS x 0.75
 Categoria ”Sport” -  SA = SS x 0.5
-Cerinţe
-Structură
+
+Cerinţe:
+
+
+Structură:
+
 Să se creeze următoarele elemente:
+
 (7p) Clasa abstractă Video cu următorii membri:
 Un câmp mVideoId de tip std::string, și trei câmpuri mLikes, mDislikes și mViews, toate de tip uint32_t.
 Un constructor protejat care să aibă argumente de tip const std::string &, uint32_t, uint32_t, uint32_t corespunzătoare câmpurilor clasei, în aceeași ordine ca mai sus, care să inițializeze câmpurile.
@@ -26,15 +32,19 @@ O metodă publică, apelabilă pentru obiecte const, numită getDislikes, care s
 O metodă publică, apelabilă pentru obiecte const, numită getSimpleScore, care să calculeze și să întoarcă scorul simplu.
 O metodă publică, pur virtuală, apelabilă pentru obiecte const, numită getAdvancedScore, care să întoarcă scorul avansat.
 O metodă publică void print(bool simple) const care să afișeze pe ecran ID-ul videoclipului și, dacă simple e true, scorul simplu, iar dacă e false, scorul avansat, așa cum se cere la ieșire (valoarea scorului cu două zecimale), iar la final un caracter newline.
+
 (2p) Clasa StudyVideo care să extindă clasa Video cu următorii membri:
 Un constructor public care să aibă argumente de tip const std::string &, uint32_t, uint32_t, uint32_t corespunzătoare câmpurilor superclasei, în aceeași ordine ca mai sus, care să apeleze constructorul superclasei.
 Implementarea metodei pur virtuale din superclasă care să întoarcă calculeze și să întoarcă scorul avansat pentru acest tip de video.
+
 (2p) Clasa AnimalVideo care să extindă clasa Video cu următorii membri:
 Un constructor public care să aibă argumente de tip const std::string &, uint32_t, uint32_t, uint32_t corespunzătoare câmpurilor superclasei, în aceeași ordine ca mai sus, care să apeleze constructorul superclasei.
 Implementarea metodei pur virtuale din superclasă care să întoarcă calculeze și să întoarcă scorul avansat pentru acest tip de video.
+
 (2p) Clasa SportsVideo care să extindă clasa Video cu următorii membri:
 Un constructor public care să aibă argumente de tip const std::string &, uint32_t, uint32_t, uint32_t corespunzătoare câmpurilor superclasei, în aceeași ordine ca mai sus, care să apeleze constructorul superclasei.
 Implementarea metodei pur virtuale din superclasă care să întoarcă calculeze și să întoarcă scorul avansat pentru acest tip de video.
+
 (2p) Clasa VideoFactory care să extindă clasa Video cu următorii membri:
 Constructorul implicit șters (inaccesibil).
 O metodă statică createVideo care să primească ca argumente const std::string & id, const std::string & type, uint32_t likes, uint32_t dislikes, uint32_t views unde type este tipul video-ului, așa cum este citit de la tastatură, și care întoarce un obiect nou creat corespunzător, ca pointer la Video. Dacă tipul este necunoscut, metoda trebuie să arunce o excepție de tip std::invalid_argument.
